@@ -57,6 +57,9 @@ const CreateLfg = () => {
     const newValues = {
       ...values,
       game: selectedGame,
+      platform: selectedGame.platforms.find((p) => p.name === values.platform),
+      region: selectedGame.regions.find((r) => r.name === values.region),
+      gameModes: values.gameModes.map((gm) => selectedGame.gameModes.find((g) => g.name === gm)),
       tags,
     };
     dispatch(createLfg(newValues));

@@ -1,21 +1,16 @@
-import { Game } from './game';
+import { Game, GameMode, Platform, Region } from './game';
+import { User } from './user';
 
-export interface Lfg extends LfgBase {
+export interface Lfg {
   _id: string;
-  user: {
-    name: string;
-    googleId: string;
-    image: string;
-  };
-}
-
-export interface LfgBase {
+  user: User;
   game: Game;
-  gameModes: string[];
-  platform: string;
-  region: string;
+  gameModes: GameMode[];
+  platform: Platform;
+  region: Region;
   ign: string;
   tags: string[];
   description: string;
   playerCount: number;
+  created: Date;
 }

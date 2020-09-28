@@ -11,3 +11,23 @@
   font-size: 16px;
   align-items: center;
 }
+
+.login-popover {
+  .ant-card-body {
+    padding: 0px;
+  }
+
+  .ant-card-meta {
+    display: flex;
+    align-items: center;
+    margin: 10px !important;
+
+    .ant-card-meta-title {
+      margin-bottom: 0px !important;
+    }
+
+    .ant-card-meta-avatar {
+      display: flex;
+    }
+  }
+}

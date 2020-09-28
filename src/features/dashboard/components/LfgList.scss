@@ -8,34 +8,52 @@
 
 .meta-list {
   display: flex;
-  margin-top: 15px;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  .ant-card-meta {
+    display: flex;
+    align-items: center;
+    margin: 10px !important;
+
+    .ant-card-meta-title {
+      margin-bottom: 0px !important;
+    }
+
+    .ant-card-meta-avatar {
+      display: flex;
+    }
+  }
+
+  .ant-tag {
+    margin-top: 10px !important;
+  }
 }
 
-.ant-card-meta {
+.top-meta {
   display: flex;
-  align-items: center;
-  margin: 10px !important;
-}
+  justify-content: space-between;
 
-.ant-card-meta-title {
-  margin-bottom: 0px !important;
+  .ant-card-meta {
+    display: flex;
+    align-items: center;
+    margin: 10px !important;
+
+    .ant-card-meta-title {
+      margin-bottom: 0px !important;
+    }
+
+    .ant-card-meta-avatar {
+      display: flex;
+    }
+  }
 }
 
 .svg-inline--fa {
   font-size: 20px;
 }
 
-.ant-card-meta-avatar {
-  display: flex;
-}
-
 .lfg-tags {
   display: flex;
   flex-wrap: wrap;
-}
-
-.ant-tag {
-  margin-top: 10px !important;
 }

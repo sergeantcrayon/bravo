@@ -39,16 +39,16 @@ const Login = () => {
   });
 
   const popoverContent = (
-    <div>
+    <div className="login-popover">
       <Card
         style={{ width: 300 }}
         actions={[
-          <Button type="primary" ghost icon={<GoogleOutlined />} onClick={signOut}>
+          <Button icon={<GoogleOutlined />} onClick={signOut} key="logout">
             Logout
           </Button>,
         ]}
       >
-        <Meta avatar={<Avatar src={googleAuth?.profileObj.imageUrl} />} title="Card title" description="This is the description" />
+        <Meta title={googleAuth?.profileObj.name} description={'No idea what to put here'} avatar={<Avatar src={googleAuth?.profileObj.imageUrl} />} />
       </Card>
     </div>
   );

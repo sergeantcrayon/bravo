@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Secrets } from '../environments/environment';
 import { Game } from '../shared/models/game';
-import { Lfg, LfgBase } from '../shared/models/lfg';
+import { Lfg } from '../shared/models/lfg';
 
 const api = axios.create({
   baseURL: Secrets.API_URL,
@@ -25,6 +25,6 @@ export const httpQueryLfg = (query: any) => {
   return api.post<Lfg[]>(`/lfg/query`, query).then((response) => response.data);
 };
 
-export const httpCreateLfg = (command: LfgBase) => {
+export const httpCreateLfg = (command: any) => {
   return api.post<Lfg>(`/lfg`, command).then((response) => response.data);
 };
