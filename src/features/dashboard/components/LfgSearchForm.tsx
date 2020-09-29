@@ -18,7 +18,7 @@ const LfgSearchForm = () => {
   const [currTag, setCurrTag] = useState<string>();
   const gamesOnChange = (name: string) => {
     const game = games.find((g) => g.name === name);
-    form.resetFields(['platform', 'region', 'gameModes']);
+    form.resetFields(['platform.name', 'region.name', 'gameModes.name']);
     setSelectedGame(game);
   };
 
@@ -116,13 +116,15 @@ const LfgSearchForm = () => {
                 onPressEnter={handleAddTag}
               />
             </div>
-            <div>
-              {tags.map((tag) => (
-                <Tag closable={true} key={tag} onClose={() => handleRemoveTag(tag)}>
-                  {tag}
-                </Tag>
-              ))}
-            </div>
+            {tags && tags.length > 0 ? (
+              <div className="lfg-search-form-item lfg-search-tags">
+                {tags.map((tag) => (
+                  <Tag closable={true} key={tag} onClose={() => handleRemoveTag(tag)}>
+                    {tag}
+                  </Tag>
+                ))}
+              </div>
+            ) : null}
 
             <div className="lfg-search-form-item lfg-search-form-actions">
               <Button type="primary" onClick={form.submit}>
