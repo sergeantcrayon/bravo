@@ -1,4 +1,4 @@
-import { Avatar, Button, Card, Popover } from 'antd';
+import { Avatar, Button, Card, Popover, Tooltip } from 'antd';
 import React, { Fragment } from 'react';
 import { GoogleLoginResponse, useGoogleLogin, useGoogleLogout } from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +8,8 @@ import { login, logout } from '../redux/core.reducer';
 import './Login.scss';
 import { GoogleOutlined } from '@ant-design/icons';
 import Meta from 'antd/lib/card/Meta';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -43,9 +45,9 @@ const Login = () => {
       <Card
         style={{ width: 300 }}
         actions={[
-          <Button icon={<GoogleOutlined />} onClick={signOut} key="logout">
-            Logout
-          </Button>,
+          <Tooltip title="logout">
+            <Button icon={<FontAwesomeIcon icon={faSignOutAlt} />} onClick={signOut} key="logout" shape="round"></Button>
+          </Tooltip>,
         ]}
       >
         <Meta title={googleAuth?.profileObj.name} description={'No idea what to put here'} avatar={<Avatar src={googleAuth?.profileObj.imageUrl} />} />
@@ -63,7 +65,7 @@ const Login = () => {
           </div>
         </Popover>
       ) : (
-        <Button type="primary" icon={<GoogleOutlined />} onClick={signIn}>
+        <Button type="link" icon={<GoogleOutlined />} onClick={signIn}>
           Login
         </Button>
       )}
