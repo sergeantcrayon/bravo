@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { Secrets } from '../environments/environment';
+import Environment from '../environments/environment';
 
 const api = axios.create({
-  baseURL: Secrets.API_URL,
+  baseURL: Environment.API_URL,
 });
 
 api.interceptors.request.use(

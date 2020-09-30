@@ -2,7 +2,7 @@ import { Avatar, Button, Card, Popover, Tooltip } from 'antd';
 import React from 'react';
 import { GoogleLoginResponse, useGoogleLogin, useGoogleLogout } from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
-import { Secrets } from '../../environments/environment';
+import Environment from '../../environments/environment';
 import { RootState } from '../../store';
 import './Login.scss';
 import { GoogleOutlined } from '@ant-design/icons';
@@ -27,7 +27,7 @@ const Login = () => {
   const { signIn } = useGoogleLogin({
     onSuccess: handleSuccess,
     onFailure: handleFailure,
-    clientId: Secrets.GOOGLE_CLIENT_ID,
+    clientId: Environment.GOOGLE_CLIENT_ID,
     // isSignedIn: true,
     cookiePolicy: 'single_host_origin',
   });
@@ -37,7 +37,7 @@ const Login = () => {
   };
 
   const { signOut } = useGoogleLogout({
-    clientId: Secrets.GOOGLE_CLIENT_ID,
+    clientId: Environment.GOOGLE_CLIENT_ID,
     onLogoutSuccess: signOutSuccess,
   });
 
