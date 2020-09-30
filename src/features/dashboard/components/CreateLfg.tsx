@@ -13,7 +13,7 @@ const { Option } = Select;
 
 const CreateLfg = () => {
   const games = useSelector((state: RootState) => state.core.games);
-  const google = useSelector((state: RootState) => state.core.google);
+  const user = useSelector((state: RootState) => state.core.user);
   const dispatch = useDispatch();
   const [form] = useForm();
   const [modalState, setModalState] = useState(false);
@@ -69,8 +69,8 @@ const CreateLfg = () => {
   return (
     <Fragment>
       <div className="header-area">
-        <Tooltip title={google ? '' : 'Must be logged in to create.'}>
-          <Button type="primary" onClick={() => setModalState(true)} disabled={google == null}>
+        <Tooltip title={user ? '' : 'Must be logged in to create.'}>
+          <Button type="primary" onClick={() => setModalState(true)} disabled={user == null}>
             Create LFG
           </Button>
         </Tooltip>

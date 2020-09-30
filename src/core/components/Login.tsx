@@ -1,22 +1,22 @@
-import { Avatar, Button, Card, Popover, Tooltip } from 'antd';
+import { Avatar, Button, Card, Modal, Popover, Tooltip } from 'antd';
 import React, { Fragment } from 'react';
 import { GoogleLoginResponse, useGoogleLogin, useGoogleLogout } from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
 import { Secrets } from '../../environments/environment';
 import { RootState } from '../../store';
-import { login, logout } from '../redux/core.reducer';
 import './Login.scss';
 import { GoogleOutlined } from '@ant-design/icons';
 import Meta from 'antd/lib/card/Meta';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { googleLogin, logout } from '../redux/core.reducer';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const googleAuth = useSelector((state: RootState) => state.core.google);
+  const user = useSelector((state: RootState) => state.core.user);
 
   const handleSuccess = (response: GoogleLoginResponse) => {
-    dispatch(login(response));
+    dispatch(googleLogin(response));
   };
 
   const handleFailure = () => {
@@ -40,6 +40,11 @@ const Login = () => {
     onLogoutSuccess: signOutSuccess,
   });
 
+  const signupOk = () => {};
+
+  const signupCancel = () => {
+    signOut();
+  };
   const popoverContent = (
     <div className="login-popover">
       <Card
@@ -50,18 +55,18 @@ const Login = () => {
           </Tooltip>,
         ]}
       >
-        <Meta title={googleAuth?.profileObj.name} description={'No idea what to put here'} avatar={<Avatar src={googleAuth?.profileObj.imageUrl} />} />
+        <Meta title={user?.name} description={'No idea what to put here'} avatar={<Avatar src={user?.image} />} />
       </Card>
     </div>
   );
 
   return (
     <Fragment>
-      {googleAuth ? (
+      {user ? (
         <Popover placement="bottom" content={popoverContent} trigger="click">
           <div className="status">
-            <Avatar src={googleAuth?.profileObj.imageUrl} />
-            <span className="name">{googleAuth?.profileObj.name}</span>
+            <Avatar src={user?.image} />
+            <span className="name">{user?.name}</span>
           </div>
         </Popover>
       ) : (
@@ -69,6 +74,11 @@ const Login = () => {
           Login
         </Button>
       )}
+      <Modal title="Basic Modal" visible={true} onOk={signupOk} onCancel={signupOk}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
     </Fragment>
   );
 };
