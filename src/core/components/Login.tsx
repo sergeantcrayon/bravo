@@ -1,5 +1,5 @@
-import { Avatar, Button, Card, Modal, Popover, Tooltip } from 'antd';
-import React, { Fragment } from 'react';
+import { Avatar, Button, Card, Popover, Tooltip } from 'antd';
+import React from 'react';
 import { GoogleLoginResponse, useGoogleLogin, useGoogleLogout } from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
 import { Secrets } from '../../environments/environment';
@@ -10,6 +10,7 @@ import Meta from 'antd/lib/card/Meta';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { googleLogin, logout } from '../redux/core.reducer';
+import Signup from './Signup';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const Login = () => {
     onSuccess: handleSuccess,
     onFailure: handleFailure,
     clientId: Secrets.GOOGLE_CLIENT_ID,
-    isSignedIn: true,
+    // isSignedIn: true,
     cookiePolicy: 'single_host_origin',
   });
 
@@ -40,11 +41,6 @@ const Login = () => {
     onLogoutSuccess: signOutSuccess,
   });
 
-  const signupOk = () => {};
-
-  const signupCancel = () => {
-    signOut();
-  };
   const popoverContent = (
     <div className="login-popover">
       <Card
@@ -61,7 +57,7 @@ const Login = () => {
   );
 
   return (
-    <Fragment>
+    <div>
       {user ? (
         <Popover placement="bottom" content={popoverContent} trigger="click">
           <div className="status">
@@ -74,12 +70,8 @@ const Login = () => {
           Login
         </Button>
       )}
-      <Modal title="Basic Modal" visible={true} onOk={signupOk} onCancel={signupOk}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
-    </Fragment>
+      <Signup signOut={signOut} />
+    </div>
   );
 };
 

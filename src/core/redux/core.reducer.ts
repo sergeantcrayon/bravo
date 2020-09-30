@@ -7,6 +7,7 @@ const initialState: CoreState = {
   google: null,
   games: null,
   user: null,
+  signupModal: false,
 };
 
 export const coreSlice = createSlice({
@@ -23,6 +24,10 @@ export const coreSlice = createSlice({
     login(state, action: { type: string; payload: User }) {
       state.user = action.payload;
     },
+    setSignupModal(state, action: { type: string; payload: boolean }) {
+      state.signupModal = action.payload;
+    },
+    signup(state, action: { type: string; payload: any }) {},
     getGames() {},
     getGamesSuccess(state, action: { type: string; payload: Game[] }) {
       state.games = action.payload;
@@ -31,5 +36,5 @@ export const coreSlice = createSlice({
   },
 });
 
-export const { login, googleLogin, logout, getGames, getGamesSuccess, getGamesFailure } = coreSlice.actions;
+export const { login, googleLogin, logout, setSignupModal, signup, getGames, getGamesSuccess, getGamesFailure } = coreSlice.actions;
 export default coreSlice.reducer;

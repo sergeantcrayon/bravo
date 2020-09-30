@@ -6,4 +6,5 @@ export interface CoreState {
   google: GoogleLoginResponse;
   user: User;
   games: Game[];
+  signupModal: boolean;
 }

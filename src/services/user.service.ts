@@ -18,3 +18,7 @@ api.interceptors.request.use(
 export const httpLogin = () => {
   return api.post<string>('/user/login').then((response) => response.data);
 };
+
+export const httpSignup = (param: any) => {
+  return api.post<string>('/user/signup', param).then((response) => response.data);
+};
