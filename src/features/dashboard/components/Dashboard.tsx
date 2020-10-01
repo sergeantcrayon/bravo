@@ -8,7 +8,7 @@ import { Col, Row } from 'antd';
 const Dashboard = () => {
   return (
     <Row className="dashboard">
-      <Col lg={12} md={16} xs={22}>
+      <Col span={24}>
         <LfgSearchForm />
         <CreateLfg />
         <LfgList />

@@ -103,8 +103,7 @@ const LfgSearchForm = () => {
                 ))}
               </Select>
             </Form.Item>
-          </div>
-          <div className="lfg-search-form-row">
+
             <div className="lfg-search-form-item">
               <Input
                 type="text"
@@ -125,7 +124,8 @@ const LfgSearchForm = () => {
                 ))}
               </div>
             ) : null}
-
+          </div>
+          <div className="lfg-search-form-row lfg-search-form-action-row">
             <div className="lfg-search-form-item lfg-search-form-actions">
               <Button type="primary" onClick={form.submit}>
                 Search

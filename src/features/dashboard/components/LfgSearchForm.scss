@@ -21,6 +21,10 @@
   flex-wrap: wrap;
 }
 
+.lfg-search-form-row.lfg-search-form-action-row {
+  flex-direction: row-reverse;
+}
+
 .lfg-search-form-item {
   margin: 10px 10px 0 10px;
   height: 45px;
@@ -32,6 +36,7 @@
 .lfg-search-form-actions {
   width: 250px;
   display: flex;
+
   justify-content: space-evenly;
 }
 

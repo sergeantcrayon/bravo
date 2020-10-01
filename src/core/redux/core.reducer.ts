@@ -23,6 +23,7 @@ export const coreSlice = createSlice({
     },
     login(state, action: { type: string; payload: User }) {
       state.user = action.payload;
+      state.signupModal = false;
     },
     setSignupModal(state, action: { type: string; payload: boolean }) {
       state.signupModal = action.payload;
