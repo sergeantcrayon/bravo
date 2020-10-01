@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import './CreateLfg.scss';
 import TextArea from 'antd/lib/input/TextArea';
 import { useForm } from 'antd/lib/form/Form';
-import { RootState } from '../../../store';
-import { Game } from '../../../shared/models/game';
+import { Game } from '@shared/models';
+import { RootState } from 'store';
 import { createLfg } from '../redux/dashboard.reducer';
 
 const { Option } = Select;

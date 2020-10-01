@@ -1,4 +1,4 @@
-import { Lfg } from '../../../shared/models/lfg';
+import { Lfg } from '@shared/models';
 
 export interface DashboardState {
   lfgs: Lfg[];

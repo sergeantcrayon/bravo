@@ -1,28 +1,25 @@
 import { Avatar, Card, Tag } from 'antd';
 import Meta from 'antd/lib/card/Meta';
-import TimeAgo from 'javascript-time-ago';
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { Lfg } from './../../../shared/models/lfg';
-import en from 'javascript-time-ago/locale/en';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCrosshairs, faGamepad, faGlobe, faTags, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
-import { PlatformToIcon } from '../../../shared/helpers/icon-helper';
 import './LfgCard.scss';
+import moment from 'moment';
+import { Lfg } from '@shared/models';
+import { PlatformToIcon } from '@shared/helpers/icon-helper';
 interface LfgCardProps {
   lfg: Lfg;
 }
 
 const LfgCard = ({ lfg }: LfgCardProps) => {
-  TimeAgo.addLocale(en);
-  const timeAgo = new TimeAgo('en-US');
   return (
     <Fragment>
       <Card hoverable key={lfg._id}>
         <Link to={`/lfg/${lfg._id}`}>
           <div className="top-meta">
             <Meta avatar={<Avatar src={lfg.user.image} />} title={lfg.user.name} description={lfg.description} />
-            <Meta description={timeAgo.format(new Date(lfg.created))} />
+            <Meta description={moment(lfg.created).fromNow()} />
           </div>
           <div className="meta-list">
             <Meta avatar={<FontAwesomeIcon icon={faGamepad} />} description={lfg.game.name} />

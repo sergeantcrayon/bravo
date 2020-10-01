@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Lfg } from '../../../shared/models/lfg';
+import { Lfg } from '@shared/models';
 import { DashboardState } from './dashboard.state';
 const initialState: DashboardState = {
   lfgs: [],

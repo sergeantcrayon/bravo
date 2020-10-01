@@ -3,8 +3,8 @@ import './Signup.scss';
 import React from 'react';
 import { Input, Form, Modal } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store';
-import { setSignupModal, signup } from '../redux/core.reducer';
+import { RootState } from 'store';
+import { setSignupModal, signup } from '@core/redux/core.reducer';
 import { useForm } from 'antd/lib/form/Form';
 
 interface SignupProps {

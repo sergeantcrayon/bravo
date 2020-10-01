@@ -1,7 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { httpQueryLfg } from '../../../services/lfg.service';
+import { httpQueryLfg } from '@services/lfg.service';
 import { createLfg, createLfgSuccess, getLfgs, getLfgsSucces } from './dashboard.reducer';
-import { httpCreateLfg } from './../../../services/lfg.service';
+import { httpCreateLfg } from '@services/lfg.service';
 
 function* getLfgsSaga(action: { type: string; payload: any }) {
   const data = yield call(httpQueryLfg, action.payload);

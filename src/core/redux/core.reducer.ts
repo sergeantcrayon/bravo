@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { CoreState } from './core.state';
 import { GoogleLoginResponse } from 'react-google-login';
-import { Game } from '../../shared/models/game';
-import { User } from '../../shared/models/user';
+import { Game, User } from '@shared/models';
 const initialState: CoreState = {
   google: null,
   games: null,

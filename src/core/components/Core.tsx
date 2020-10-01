@@ -2,9 +2,9 @@ import { Col, Layout, Row } from 'antd';
 import React, { Fragment, useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import Dashboard from '../../features/dashboard/components/Dashboard';
-import LfgRoom from '../../features/lfg-room/components/LfgRoom';
-import { getGames } from '../redux/core.reducer';
+import Dashboard from '@dashboard/components/Dashboard';
+import LfgRoom from '@lfg-room/components/LfgRoom';
+import { getGames } from '@core/redux/core.reducer';
 import './Core.scss';
 import Navbar from './Navbar';
 

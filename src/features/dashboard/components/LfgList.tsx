@@ -2,10 +2,9 @@ import React, { Fragment, useCallback, useEffect } from 'react';
 import './LfgList.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLfgs } from '../redux/dashboard.reducer';
-import { RootState } from '../../../store';
+import { RootState } from 'store';
 import { Card, Empty, Skeleton } from 'antd';
-import TimeAgo from 'javascript-time-ago';
-import en from 'javascript-time-ago/locale/en';
+
 import LfgCard from './LfgCard';
 
 const LfgList = () => {
@@ -17,7 +16,6 @@ const LfgList = () => {
     stableDispatch(getLfgs({}));
   }, [stableDispatch]);
 
-  TimeAgo.addLocale(en);
   const loadingCards = (
     <Fragment>
       <div className="lfg-item">

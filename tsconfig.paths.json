@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@core/*": ["core/*"],
+      "@services/*": ["services/*"],
+      "@environments/*": ["environments/*"],
+      "@shared/*": ["shared/*"],
+      "@dashboard/*": ["features/dashboard/*"],
+      "@lfg-room/*": ["features/lfg-room/*"]
+    }
+  }
+}

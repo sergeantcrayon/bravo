@@ -1,10 +1,10 @@
+import { Game } from '@shared/models';
 import { Button, Form, Input, Select, Tag } from 'antd';
 import { useForm } from 'antd/lib/form/Form';
 import React, { Fragment, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Game } from '../../../shared/models/game';
-import { RootState } from '../../../store';
-import { getLfgs } from '../redux/dashboard.reducer';
+import { RootState } from 'store';
+import { getLfgs } from '@dashboard/redux/dashboard.reducer';
 import './LfgSearchForm.scss';
 
 const { Option } = Select;

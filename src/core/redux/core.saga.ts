@@ -1,8 +1,8 @@
 import { getGames, getGamesSuccess, googleLogin, login, setSignupModal, signup } from './core.reducer';
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { GoogleLoginResponse } from 'react-google-login';
-import { httpGetGames } from '../../services/lfg.service';
-import { httpLogin, httpSignup } from './../../services/user.service';
+import { httpGetGames } from '@services/lfg.service';
+import { httpLogin, httpSignup } from '@services/user.service';
 import jwt_decode from 'jwt-decode';
 
 function* googleLoginSaga(action: { type: string; payload: GoogleLoginResponse }) {

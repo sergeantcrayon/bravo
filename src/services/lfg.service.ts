@@ -1,7 +1,6 @@
+import { Game, Lfg } from '@shared/models';
 import axios from 'axios';
-import Environment from '../environments/environment';
-import { Game } from '../shared/models/game';
-import { Lfg } from '../shared/models/lfg';
+import Environment from '@environments/environment';
 
 const api = axios.create({
   baseURL: Environment.API_URL,
