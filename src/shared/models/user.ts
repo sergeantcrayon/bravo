@@ -4,3 +4,7 @@ export interface User {
   googleId: string;
   image: string;
 }
+
+export interface LfgUser extends User {
+  ign: string;
+}

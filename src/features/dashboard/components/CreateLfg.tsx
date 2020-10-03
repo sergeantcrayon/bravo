@@ -60,6 +60,7 @@ const CreateLfg = () => {
       platform: selectedGame.platforms.find((p) => p.name === values.platform),
       region: selectedGame.regions.find((r) => r.name === values.region),
       gameModes: values.gameModes.map((gm) => selectedGame.gameModes.find((g) => g.name === gm)),
+      maxPlayers: values.playerCount + 1,
       tags,
     };
     dispatch(createLfg(newValues));

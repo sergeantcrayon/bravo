@@ -44,11 +44,17 @@
   .lfg-search-form-row {
     justify-content: center;
   }
+  .lfg-search-form-second-row {
+    justify-content: center;
+  }
 }
 
 @media (min-width: 590px) {
   .lfg-search-form-row {
     justify-content: space-between;
+  }
+  .lfg-search-form-second-row {
+    justify-content: left;
   }
 }
 
@@ -59,4 +65,10 @@
   .ant-tag {
     margin-top: 5px;
   }
+}
+
+.lfg-search-form-second-row {
+  display: flex;
+  justify-content: left;
+  width: 100%;
 }

@@ -103,7 +103,8 @@ const LfgSearchForm = () => {
                 ))}
               </Select>
             </Form.Item>
-
+          </div>
+          <div className="lfg-search-form-second-row">
             <div className="lfg-search-form-item">
               <Input
                 type="text"

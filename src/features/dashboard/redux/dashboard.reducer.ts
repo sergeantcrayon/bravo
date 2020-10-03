@@ -13,7 +13,7 @@ const dashboardSlice = createSlice({
     getLfgs(state, action: { type: string; payload: any }) {
       state.loadingLfgs = true;
     },
-    getLfgsSucces(state, action: { type: string; payload: Lfg[] }) {
+    getLfgsSuccess(state, action: { type: string; payload: Lfg[] }) {
       state.lfgs = action.payload;
       state.loadingLfgs = false;
     },
@@ -30,6 +30,6 @@ const dashboardSlice = createSlice({
   },
 });
 
-export const { getLfgs, getLfgsSucces, getLfgsFailure, createLfg, createLfgSuccess, createLfgFailure } = dashboardSlice.actions;
+export const { getLfgs, getLfgsSuccess, getLfgsFailure, createLfg, createLfgSuccess, createLfgFailure } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

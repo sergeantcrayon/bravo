@@ -1,11 +1,11 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { httpQueryLfg } from '@services/lfg.service';
-import { createLfg, createLfgSuccess, getLfgs, getLfgsSucces } from './dashboard.reducer';
+import { createLfg, createLfgSuccess, getLfgs, getLfgsSuccess } from './dashboard.reducer';
 import { httpCreateLfg } from '@services/lfg.service';
 
 function* getLfgsSaga(action: { type: string; payload: any }) {
   const data = yield call(httpQueryLfg, action.payload);
-  yield put(getLfgsSucces(data));
+  yield put(getLfgsSuccess(data));
 }
 
 function* createLfgSaga(action: { type: string; payload: any }) {

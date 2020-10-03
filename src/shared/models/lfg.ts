@@ -1,9 +1,10 @@
 import { Game, GameMode, Platform, Region } from './game';
-import { User } from './user';
+import { LfgUser, User } from './user';
 
 export interface Lfg {
   _id: string;
-  user: User;
+  owner: User;
+  users: LfgUser[];
   game: Game;
   gameModes: GameMode[];
   platform: Platform;
@@ -11,6 +12,6 @@ export interface Lfg {
   ign: string;
   tags: string[];
   description: string;
-  playerCount: number;
+  maxPlayers: number;
   created: Date;
 }

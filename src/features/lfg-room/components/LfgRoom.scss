@@ -1,0 +1,16 @@
+.users {
+  .ant-card-meta {
+    display: flex;
+    align-items: center;
+    margin: 10px !important;
+
+    .ant-card-meta-title {
+      margin-bottom: 0px !important;
+    }
+
+    .ant-card-meta-avatar {
+      display: flex;
+      padding-right: 10px;
+    }
+  }
+}
