@@ -7,6 +7,7 @@ const initialState: CoreState = {
   games: null,
   user: null,
   signupModal: false,
+  jwt: null,
 };
 
 export const coreSlice = createSlice({
@@ -15,13 +16,16 @@ export const coreSlice = createSlice({
   reducers: {
     googleLogin(state, action: { type: string; payload: GoogleLoginResponse }) {
       state.google = action.payload;
+      state.jwt = action.payload.tokenId;
     },
     logout(state) {
       state.google = null;
       state.user = null;
+      state.jwt = null;
     },
-    login(state, action: { type: string; payload: User }) {
-      state.user = action.payload;
+    login(state, action: { type: string; payload: { user: User; token: string } }) {
+      state.user = action.payload.user;
+      state.jwt = action.payload.token;
       state.signupModal = false;
     },
     setSignupModal(state, action: { type: string; payload: boolean }) {

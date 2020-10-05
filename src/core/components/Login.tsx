@@ -27,8 +27,8 @@ const Login = () => {
   const { signIn } = useGoogleLogin({
     onSuccess: handleSuccess,
     onFailure: handleFailure,
+    isSignedIn: true,
     clientId: Environment.GOOGLE_CLIENT_ID,
-    // isSignedIn: true,
     cookiePolicy: 'single_host_origin',
   });
 

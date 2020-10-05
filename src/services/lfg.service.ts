@@ -1,6 +1,7 @@
 import { Game, Lfg } from '@shared/models';
 import axios from 'axios';
 import Environment from '@environments/environment';
+import store from '../store';
 
 const api = axios.create({
   baseURL: Environment.API_URL,
@@ -8,7 +9,8 @@ const api = axios.create({
 
 api.interceptors.request.use(
   function (config) {
-    config.headers = localStorage.token ? { Authorization: `Bearer ${localStorage.token}` } : {};
+    const state = store.getState();
+    config.headers = state.core.jwt ? { Authorization: `Bearer ${state.core.jwt}` } : {};
     return config;
   },
   function (error) {
@@ -26,4 +28,8 @@ export const httpQueryLfg = (query: any) => {
 
 export const httpCreateLfg = (command: any) => {
   return api.post<Lfg>(`/lfg`, command).then((response) => response.data);
+};
+
+export const httpJoinLfg = (command: { lfgId: string; ign: string }) => {
+  return api.post<Lfg>(`/lfg/join`, command).then((response) => response);
 };

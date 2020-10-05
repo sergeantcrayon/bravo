@@ -9,3 +9,9 @@ body {
 .ant-card-head-title {
   white-space: normal !important;
 }
+
+.lfg-item {
+  .ant-card-body {
+    padding: 6px;
+  }
+}

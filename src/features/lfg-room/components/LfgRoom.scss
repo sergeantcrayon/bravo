@@ -1,4 +1,4 @@
-.users {
+.lfg-room-users {
   .ant-card-meta {
     display: flex;
     align-items: center;
@@ -13,4 +13,34 @@
       padding-right: 10px;
     }
   }
+}
+
+.lfg-room-header {
+  .lfg-room-header-text {
+    font-size: small;
+    margin: 0 3px 0 0px;
+    color: rgb(120, 124, 126);
+  }
+
+  .ant-avatar-sm {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+  }
+}
+
+.lfg-room-card {
+  .ant-card-head {
+    padding: 0 12px;
+  }
+  .ant-card-head-title {
+    padding: 0px;
+  }
+  .ant-card-body {
+    padding: 6px;
+  }
+}
+
+.lfg-room-header-top {
+  font-weight: 300;
 }

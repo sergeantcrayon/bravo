@@ -20,9 +20,18 @@ const dashboardSlice = createSlice({
     getLfgFailure(state) {
       state.loading = false;
     },
+    joinLfgRoom(state, action: { type: string; payload: { lfgId: string; ign: string } }) {
+      state.loading = true;
+    },
+    joinLfgRoomSuccess(state, action) {
+      state.loading = false;
+    },
+    joinLfgRoomFailure(state, action: { type: string; payload: string }) {
+      state.loading = false;
+    },
   },
 });
 
-export const { getLfg, getLfgSuccess, getLfgFailure } = dashboardSlice.actions;
+export const { getLfg, getLfgSuccess, getLfgFailure, joinLfgRoom, joinLfgRoomSuccess, joinLfgRoomFailure } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

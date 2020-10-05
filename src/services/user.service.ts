@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Environment from '@environments/environment';
+import store from '../store';
 
 const api = axios.create({
   baseURL: Environment.API_URL,
@@ -7,7 +8,8 @@ const api = axios.create({
 
 api.interceptors.request.use(
   function (config) {
-    config.headers = localStorage.googleToken ? { Authorization: `Bearer ${localStorage.googleToken}` } : {};
+    const state = store.getState();
+    config.headers = state.core.google?.tokenId ? { Authorization: `Bearer ${state.core.google.tokenId}` } : {};
     return config;
   },
   function (error) {
