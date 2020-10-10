@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="bar-container">
         <div className="half-bar">
           <Link to={`/`}>
-            <span className="nav-logo">Bravo</span>
+            <span className="nav-logo">bravo</span>
           </Link>
           <Login />
         </div>
