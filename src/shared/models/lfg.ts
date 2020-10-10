@@ -1,5 +1,6 @@
 import { Game, GameMode, Platform, Region } from './game';
 import { LfgUser, User } from './user';
+import { Comment } from './comment';
 
 export interface Lfg {
   _id: string;
@@ -14,4 +15,5 @@ export interface Lfg {
   description: string;
   maxPlayers: number;
   created: Date;
+  comments: Comment[];
 }

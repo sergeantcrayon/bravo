@@ -31,5 +31,9 @@ export const httpCreateLfg = (command: any) => {
 };
 
 export const httpJoinLfg = (command: { lfgId: string; ign: string }) => {
-  return api.post<Lfg>(`/lfg/join`, command).then((response) => response);
+  return api.post<Lfg>(`/lfg/join`, command).then((response) => response.data);
+};
+
+export const httpAddLfgComment = (command: { lfgId: string; text: string }) => {
+  return api.post<Lfg>(`/lfg/comment`, command).then((response) => response.data);
 };

@@ -1,4 +1,9 @@
-.lfg-room-users {
+.lfg-room-users-container {
+  flex: 0.3;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  padding-top: 9px;
   .ant-card-meta {
     display: flex;
     align-items: center;
@@ -14,19 +19,9 @@
     }
   }
 }
-
-.lfg-room-header {
-  .lfg-room-header-text {
-    font-size: small;
-    margin: 0 3px 0 0px;
-    color: rgb(120, 124, 126);
-  }
-
-  .ant-avatar-sm {
-    width: 20px;
-    height: 20px;
-    margin-right: 3px;
-  }
+.lfg-room-users {
+  width: 100%;
+  padding-top: 15px;
 }
 
 .lfg-room-card {
@@ -39,8 +34,31 @@
   .ant-card-body {
     padding: 6px;
   }
+  .lfg-room-actions {
+    margin: 10px;
+  }
+  .lfg-room-card-content {
+    display: flex;
+
+    .lfg-room-chat {
+      padding-top: 20px;
+      flex: 0.7;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 
-.lfg-room-header-top {
-  font-weight: 300;
+.comment-as {
+  display: flex;
+  .ant-avatar-sm {
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+  }
+}
+
+.lfg-room-user-row {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,0 +1,38 @@
+.lfg-room-header {
+  .lfg-room-header-text {
+    font-size: 14px;
+    margin: 0 3px 0 0px;
+    color: rgb(120, 124, 126);
+  }
+
+  .ant-avatar-sm {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+  }
+  .lfg-room-description {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+  }
+  .lfg-room-game-name {
+    font-weight: 400;
+  }
+  .lfg-room-header-top {
+    font-weight: 400;
+    padding-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+
+    .ant-divider-vertical {
+      height: unset !important;
+    }
+  }
+}
+
+.lfg-room-tags {
+  margin-top: -5px;
+}

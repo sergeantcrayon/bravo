@@ -7,7 +7,7 @@ const Navbar = () => {
     <Fragment>
       <div className="bar-container">
         <div className="half-bar">
-          <div></div>
+          <div className="nav-logo">Bravo</div>
           <Login />
         </div>
       </div>
